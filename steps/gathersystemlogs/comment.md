@@ -1,0 +1,1 @@
+Show content of the system logs, they are usually lengthy, so we display only one in a step.

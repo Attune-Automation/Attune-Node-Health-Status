@@ -1,0 +1,10 @@
+{
+    "enabled": true, 
+    "interpreter": 1, 
+    "key": "kernelringbufferdmesg", 
+    "name": "Kernel Ring Buffer - dmesg", 
+    "osCredKey": "linuxusersudo", 
+    "serverKey": "linuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

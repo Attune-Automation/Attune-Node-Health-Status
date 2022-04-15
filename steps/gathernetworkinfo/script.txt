@@ -1,0 +1,50 @@
+# The commands used in this step need the package net-tools,
+# which is not installed by default, so we install it first
+. {linuxDistroCheckingResultTempFile} # load distro checking result
+case $DISTRO in
+    ubuntu | debian)
+        apt update
+        apt install -y net-tools
+        ;;
+    centos)
+        dnf install -y net-tools
+        ;;
+    *)
+        echo "unsupported distro"
+        false # exit code 1 will let Attune suspend running the job
+        ;;
+esac
+        
+
+
+echo "========================================================================="
+echo "Show network interfaces(such as IP, subnet, MAC, etc.)"
+echo "/usr/sbin/ifconfig"
+echo "========================================================================="
+# By default, normal users on Debian don't have /usr/sbin in $PATH
+/usr/sbin/ifconfig
+echo
+
+echo "========================================================================="
+echo "Show the routing tables(netstat -r)"
+echo "========================================================================="
+netstat -r
+echo
+
+echo "========================================================================="
+echo "Show all sockets(netstat -apn)"
+echo "========================================================================="
+netstat -apn
+echo
+
+echo "========================================================================="
+echo "Show content of the resolver configuration file(cat /etc/resolv.conf)"
+echo "========================================================================="
+[ -f /etc/resolv.conf ] && cat /etc/resolv.conf
+echo
+
+echo "========================================================================="
+echo "Show statistics of network interfaces(cat /proc/net/dev)"
+echo "========================================================================="
+[ -f /proc/net/dev ] && cat /proc/net/dev
+echo

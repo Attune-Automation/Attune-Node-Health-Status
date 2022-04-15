@@ -1,0 +1,25 @@
+echo "========================================================================="
+echo "Report file system disk space usage(df -aTh | grep -v loop)"
+echo "========================================================================="
+df -aTh | grep -v loop || true
+echo
+
+echo "========================================================================="
+echo "List block devices(lsblk -al | grep -v loop)"
+echo "========================================================================="
+lsblk -al | grep -v loop || true
+echo
+
+echo "========================================================================="
+echo "Print block device attributes(blkid | grep -v loop)"
+echo "========================================================================="
+# Debian don't have /usr/sbin in $PATH by default
+/usr/sbin/blkid | grep -v loop || true
+echo
+
+echo "========================================================================="
+echo "List active mount points(mount | grep -v loop)"
+echo "========================================================================="
+mount | grep -v loop || true
+echo
+

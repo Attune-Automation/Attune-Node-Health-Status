@@ -1,0 +1,1 @@
+Show running processes and resource usage of the system.

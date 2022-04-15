@@ -1,0 +1,89 @@
+echo "========================================================================="
+echo "Check status of NVidia GPU(nvidia-smi)"
+echo "========================================================================="
+# see if there's NVidia GPU installed
+if lspci -vnn | grep VGA | grep -qi NVIDIA
+then
+    # check if 'nvidia-smi' is installed
+    if ! type nvidia-smi >/dev/null 2>&1
+    then
+        # nvidia-smi not found, install it
+        . {linuxDistroCheckingResultTempFile} # load distro checking result
+        case $DISTRO in
+            ubuntu)
+                apt update
+                apt install -y nvidia-340
+                ;;
+            debian)
+                # add 'non-free' archive area to sources.list
+                # if there is already 'non-free', then sources.list is unmodified
+                sed -i -e '/deb http/!b' -e '/non-free/b' -e 's/$/ non-free/' /etc/apt/sources.list
+                apt update
+                apt install -y nvidia-smi
+                ;;
+            centos)
+                # consult https://docs.nvidia.com/datacenter/tesla/pdf/NVIDIA_Driver_Installation_Quickstart.pdf
+                # for installation documentation
+                dnf config-manager --set-enabled PowerTools
+                dnf install -y epel-release
+                dnf config-manager --add-repo http://developer.download.nvidia.com/compute/cuda/repos/rhel8/x86_64/cuda-rhel8.repo
+                dnf install -y kernel-devel-$(uname -r) kernel-headers-$(uname -r)
+                dnf clean all
+                dnf -y module install nvidia-driver:latest-dkms
+                ;;
+            *)
+                echo "unsupported distro"
+                false # exit code 1 will let Attune suspend running the job
+                ;;
+        esac
+    fi
+    
+    if type nvidia-smi >/dev/null 2>&1
+    then
+        nvidia-smi || true
+    else
+        echo "nvidia-smi command install failed"
+    fi
+else
+    # since 'nvidia-smi' comes with the GPU driver
+    # which is useless(and huge, may also harmful to system stability) if a GPU is not installed
+    # so we decide to not install the driver when GPU is not detected
+    echo "No NVidia GPU found."
+fi
+echo
+
+echo "========================================================================="
+echo "Show OpenCL platforms and devices(clinfo)"
+echo "========================================================================="
+# check if 'clinfo' is installed
+if ! type clinfo >/dev/null 2>&1
+then
+    # clinfo not found, install it
+    . {linuxDistroCheckingResultTempFile} # load distro checking result
+    case $DISTRO in
+        ubuntu | debian)
+            apt update
+            apt install -y clinfo
+            ;;
+        centos)
+            # no official package for CentOS8
+            # install with a RHEL7 rpm as a workaround
+            dnf install -y ocl-icd # prerequisite
+            wget https://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/c/clinfo-2.1.17.02.09-1.el7.x86_64.rpm
+            rpm -ihv clinfo-2.1.17.02.09-1.el7.x86_64.rpm
+            rm -f clinfo-2.1.17.02.09-1.el7.x86_64.rpm
+            ;;
+        *)
+            echo "unsupported distro"
+            false # exit code 1 will let Attune suspend running the job
+            ;;
+    esac
+fi
+if type clinfo >/dev/null 2>&1
+then
+    clinfo || true
+else
+    echo "clinfo command install failed"
+fi
+echo
+

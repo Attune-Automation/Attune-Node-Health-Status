@@ -1,0 +1,45 @@
+# 'lsusb' isn't installed on CentOS by default
+. {linuxDistroCheckingResultTempFile} # load distro checking result
+case $DISTRO in
+    ubuntu | debian)
+        # Nothing to be done
+        ;;
+    centos)
+        dnf install -y usbutils
+        ;;
+    *)
+        echo "unsupported distro"
+        false # exit code 1 will let Attune suspend running the job
+        ;;
+esac
+
+
+echo "========================================================================="
+echo "Show the status of modules in the Linux Kernel(lsmod)"
+echo "========================================================================="
+lsmod
+echo
+
+echo "========================================================================="
+echo "List all PCI devices(lspci)"
+echo "========================================================================="
+lspci
+echo
+
+echo "========================================================================="
+echo "List all PCI devices(lspci -v)"
+echo "========================================================================="
+lspci -v
+echo
+
+echo "========================================================================="
+echo "List USB devices(lsusb)"
+echo "========================================================================="
+lsusb
+echo
+
+echo "========================================================================="
+echo "List USB devices(lsusb -v)"
+echo "========================================================================="
+lsusb -v
+echo

@@ -1,0 +1,51 @@
+if [ -f /etc/os-release ]
+then
+    # freedesktop.org and systemd
+    # all the distros supported by this blueprint have /etc/os-release
+    . /etc/os-release
+    DISTRO=$ID
+    VER=$VERSION_ID
+elif type lsb_release >/dev/null 2>&1
+then
+    # linuxbase.org 
+    # UNTESTED
+    DISTRO=$(lsb_release -si)
+    VER=$(lsb_release -sr)
+elif [ -f /etc/lsb-release ]
+then
+    # For some versions of Debian/Ubuntu without lsb_release command
+    # UNTESTED
+    . /etc/lsb-release
+    DISTRO=$DISTRIB_ID
+    VER=$DISTRIB_RELEASE
+elif [ -f /etc/debian_version ]
+then
+    # Older Debian/Ubuntu/etc.
+    # UNTESTED
+    DISTRO=Debian
+    VER=$(cat /etc/debian_version)
+elif [ -f /etc/SuSe-release ]
+then
+    # Older SuSE/etc. 
+    # TODO currently unimplemented
+    :
+elif [ -f /etc/redhat-release ]
+then
+    # Older Red Hat, CentOS, etc. 
+    # TODO currently unimplemented
+    :
+else
+    # Fall back to uname, e.g. "Linux <version>", also works for BSD, etc.
+    # UNTESTED
+    DISTRO=$(uname -s)
+    VER=$(uname -r)
+fi
+
+echo DISTRO=$DISTRO
+echo VER=$VER
+
+# write distro checking result to file
+cat << EOF > {linuxDistroCheckingResultTempFile}
+DISTRO='$DISTRO'
+VER='$VER'
+EOF

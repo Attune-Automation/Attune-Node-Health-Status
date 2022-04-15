@@ -1,0 +1,6 @@
+{
+    "key": "linuxdistrocheckingresulttempfile", 
+    "name": "Linux Distro Checking Result Temp File", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Text"
+}

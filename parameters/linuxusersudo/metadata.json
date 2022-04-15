@@ -1,0 +1,6 @@
+{
+    "key": "linuxusersudo", 
+    "name": "Linux User(sudo)", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.LinOsCred"
+}

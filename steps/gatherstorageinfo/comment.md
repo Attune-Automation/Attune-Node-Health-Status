@@ -1,0 +1,2 @@
+Show storage related info.  
+We add a `|| true` after each `grep` to prevent `grep` returning exit code other than the configured one - `0` by default(Attune detects the exit code of every line of script, and will cease to run if exit code other than the expected one is seen), in case there is nothing found by `grep`.

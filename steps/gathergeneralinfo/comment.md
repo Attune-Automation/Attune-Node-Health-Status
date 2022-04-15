@@ -1,0 +1,1 @@
+Show general info about the system, such as date and time, hostname, info about CPU, etc.

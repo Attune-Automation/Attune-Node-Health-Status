@@ -1,0 +1,11 @@
+echo "========================================================================="
+echo "Display amount of free and used memory in the system(free -m)"
+echo "========================================================================="
+free -m
+echo
+
+echo "========================================================================="
+echo "Display kenerl info of memory(cat /proc/meminfo)"
+echo "========================================================================="
+[ -f /proc/meminfo ] && cat /proc/meminfo
+echo

@@ -1,0 +1,21 @@
+# The system log file paths are different from distros,
+# so we need to do the seperation
+. {linuxDistroCheckingResultTempFile} # load distro checking result
+case $DISTRO in
+    ubuntu | debian)
+        echo "========================================================================="
+        echo "Print the system log file(cat /var/log/syslog)"
+        echo "========================================================================="
+        [ -f /var/log/syslog ] && cat /var/log/syslog
+        ;;
+    centos)
+        echo "========================================================================="
+        echo "Print the system log file(cat /var/log/messages)"
+        echo "========================================================================="
+        [ -f /var/log/messages ] && cat /var/log/messages
+        ;;
+    *)
+        echo "unsupported distro"
+        false # exit code 1 will let Attune suspend running the job
+        ;;
+esac

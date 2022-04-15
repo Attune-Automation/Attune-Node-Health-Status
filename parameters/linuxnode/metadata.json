@@ -1,0 +1,6 @@
+{
+    "key": "linuxnode", 
+    "name": "Linux Node", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.LinuxServer"
+}

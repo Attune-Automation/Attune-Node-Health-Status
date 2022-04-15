@@ -1,0 +1,45 @@
+echo "========================================================================="
+echo "Display the current date and time of the host(date)"
+echo "========================================================================="
+date
+echo
+
+echo "========================================================================="
+echo "Print system information(uname -a)"
+echo "========================================================================="
+uname -a
+echo
+
+echo "========================================================================="
+echo "Query the system hostname and related settings(hostnamectl)"
+echo "========================================================================="
+hostnamectl
+echo
+
+echo "========================================================================="
+echo "Show who is logged on and what they are doing"
+echo "This also includes the output of 'uptime'"
+echo "(w)"
+echo "========================================================================="
+w
+echo
+
+echo "========================================================================="
+echo "Display information about the CPU architecture(lscpu)"
+echo "========================================================================="
+lscpu
+echo
+
+echo "========================================================================="
+echo "Display information about the CPU architecture"
+echo "in table view with every CPUs in a line"
+echo "(lscpu -ae)"
+echo "========================================================================="
+lscpu -ae
+echo
+
+echo "========================================================================="
+echo "Show content of kernel's info of CPU(cat /proc/cpuinfo)"
+echo "========================================================================="
+[ -f /proc/cpuinfo ] && cat /proc/cpuinfo
+echo
