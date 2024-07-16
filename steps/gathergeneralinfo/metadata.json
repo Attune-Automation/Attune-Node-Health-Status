@@ -1,5 +1,7 @@
 {
+    "actionOnStepFail": null, 
     "enabled": true, 
+    "externalUuid4": "2e9003c9-206a-4793-9fc6-5213a4fa0236", 
     "interpreter": 1, 
     "key": "gathergeneralinfo", 
     "name": "Gather General Info", 

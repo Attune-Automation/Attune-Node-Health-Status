@@ -1,5 +1,7 @@
 {
+    "actionOnStepFail": null, 
     "enabled": true, 
+    "externalUuid4": "ef6ae9a0-1097-49e1-beac-7858bf0e93d2", 
     "interpreter": 1, 
     "key": "gathernetworkinfo", 
     "name": "Gather Network Info", 

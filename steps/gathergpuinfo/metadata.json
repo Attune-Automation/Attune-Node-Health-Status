@@ -1,5 +1,7 @@
 {
+    "actionOnStepFail": null, 
     "enabled": true, 
+    "externalUuid4": "1ec4da7a-8f3d-47c1-89a3-fb04a3cb34b9", 
     "interpreter": 1, 
     "key": "gathergpuinfo", 
     "name": "Gather GPU Info", 

@@ -1,5 +1,7 @@
 {
+    "actionOnStepFail": null, 
     "enabled": true, 
+    "externalUuid4": "d332a64f-5aae-45a9-9ab5-e22c60b33b2c", 
     "interpreter": 1, 
     "key": "checkdistroandversion", 
     "name": "Check Distro and Version", 

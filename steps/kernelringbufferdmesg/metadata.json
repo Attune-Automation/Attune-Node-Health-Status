@@ -1,5 +1,7 @@
 {
+    "actionOnStepFail": null, 
     "enabled": true, 
+    "externalUuid4": "82ecaf45-c8aa-442c-a700-8eb9f5877342", 
     "interpreter": 1, 
     "key": "kernelringbufferdmesg", 
     "name": "Kernel Ring Buffer - dmesg", 

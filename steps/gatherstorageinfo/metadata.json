@@ -1,5 +1,7 @@
 {
+    "actionOnStepFail": null, 
     "enabled": true, 
+    "externalUuid4": "df38aea6-8544-44d2-a773-e25a5ec5c8ee", 
     "interpreter": 1, 
     "key": "gatherstorageinfo", 
     "name": "Gather Storage Info", 

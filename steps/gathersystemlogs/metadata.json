@@ -1,6 +1,8 @@
 {
+    "actionOnStepFail": null, 
     "concurrency": 1, 
     "enabled": true, 
+    "externalUuid4": "28d6068b-94f6-4af3-a572-679682793d75", 
     "isBlueprint": false, 
     "key": "gathersystemlogs", 
     "links": [

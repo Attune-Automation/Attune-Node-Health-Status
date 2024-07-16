@@ -1,0 +1,1484 @@
+
+<!doctype html>
+<html lang="en">
+
+
+
+
+<head>
+    <title>How to Device Health Status Dump - Linux - Attune Automation</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="title"
+          content="How to Device Health Status Dump - Linux - Attune Automation">
+    <meta name="description"
+          content="">
+    <meta name="robots"
+          content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+
+    <meta property="og:locale" content="en_AU" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title"
+          content="HowTo Device Health Status Dump - Linux - Attune Automation" />
+    <meta property="og:description" content="" />
+    <meta property="og:site_name" content="Attune Automation" />
+    <meta property="article:section" content="IT Instruction" />
+
+    <meta name="twitter:title"
+          content="How to Device Health Status Dump - Linux - Attune Automation" />
+    <meta name="twitter:description" content="" />
+
+    <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-192x192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-180x180.png">
+    <meta name="msapplication-TileImage" content="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-270x270.png">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-5TZQZNDJCD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-5TZQZNDJCD');
+    </script>
+</head>
+
+
+<body>
+
+<!-- Project NavBar -->
+
+<div class="bg-white border-bottom box-shadow sticky-top mb-3">
+<div class="container px-0">
+    <div class="row px-0">
+        <div class="col d-flex flex-column flex-lg-row align-items-center px-0
+            py-3">
+            <a class="navbar-brand my-0 mr-lg-auto"
+                  href="https://www.servertribe.com/"
+                  target="_blank">
+                    <img
+                        src="https://www.servertribe.com/wp-content/uploads/2022/06/AttuneLogoV2_powered_by.png"
+                        alt="Attune - Powered by ServerTribe"
+                        class="img-fluid navbar-img">
+            </a>
+            <nav class="my-2 my-lg-0 mr-lg-3">
+                <a class="p-2 text-dark" href="http://doc.servertribe.com/"
+                   target="_blank">
+                    Documentation
+                </a>
+                <a class="p-2 text-dark"
+                   href="https://discord.com/invite/3YpJsagqUn"
+                   target="_blank">
+                    Discord
+                </a>
+                <a class="p-2 text-dark" href="https://github.com/Attune-Automation"
+                   target="_blank">
+                    GitHub
+                </a>
+                <a class="p-2 text-dark" href="https://www.servertribe.com/learn/"
+                   target="_blank">
+                    Learn
+                </a>
+            </nav>
+            <a class="btn btn-outline-primary"
+               href="https://www.servertribe.com/download-attune-registration/"
+               target="_blank">
+                Download NOW!
+            </a>
+        </div>
+    </div>
+</div></div>
+
+<!-- Project breadcrumbs -->
+
+<!-- Project breadcrumbs -->
+<div class="container px-0">
+    <div class="row">
+        <nav class="col px-0" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="index.html">
+                    some name
+                    </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <strong>Device Health Status Dump - Linux</strong>
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- Blueprint Header -->
+
+<div class="container px-0">
+    <!-- Blueprint name and description -->
+    <div class="row">
+        <div class="col px-0">
+            <h1 class="text-left">
+                How to Device Health Status Dump - Linux
+            </h1>
+        </div>
+    </div>
+
+<!-- Blueprint Description -->
+    <div class="row pt-4">
+        <div class="col-6 px-0">
+            <h6 class="text-left">
+                This documentation is generated by
+                <a href="https://www.servertribe.com/"
+                    class="badge badge-primary"
+                    target="_blank">
+                    Attune
+                </a>
+            </h6>
+        </div>
+        <div class="col-6 align-self-end text-right px-0">
+            <h6 class="text-right">
+                <a href="https://www.youtube.com/@servertribe"
+                    class="badge badge-secondary"
+                    target="_blank">
+                    YouTube
+                </a>
+                <a href="https://github.com/Attune-Automation"
+                    class="badge badge-secondary"
+                    target="_blank">
+                    GitHub
+                </a>
+                <a href="https://discord.com/invite/3YpJsagqUn"
+                    class="badge badge-secondary"
+                    target="_blank">
+                    Discord
+                </a>
+                <a href="https://www.linkedin.com/company/servertribe/"
+                    class="badge badge-secondary"
+                    target="_blank">
+                    LinkedIn
+                </a>
+                <a href="http://doc.servertribe.com/"
+                    class="badge badge-secondary"
+                    target="_blank">
+                    Documentation
+                </a>
+            </h6>
+        </div>
+    </div>
+    <hr>
+</div>
+
+<div class="documentation">
+    <div class="container px-0">
+        <div class="row">
+
+<!-- Blueprint ToC -->
+
+
+            <div class="toc col-lg-2 px-0 pr-5">
+                <div class="container px-0 pt-3">
+                    <p class="pb-2">
+                        <strong>Contents</strong>
+                    </p>
+                    <p class="text-muted">
+                        <a href="#top">
+                            <strong>Device Health Status Dump - Linux</strong>
+                        </a>
+                    </p>
+
+
+    
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#checkdistroandversion">
+                            <strong>Step 1 -</strong> Check Distro and Version
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#gathergeneralinfo">
+                            <strong>Step 2 -</strong> Gather General Info
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#gathersystemlogs">
+                            <strong>Step 3 -</strong> Gather System Logs
+                        </a>
+                    </p>
+    
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#kernelringbufferdmesg">
+                            <strong>Step 3.1 -</strong> Kernel Ring Buffer - dmesg
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#systemlogfile">
+                            <strong>Step 3.2 -</strong> System Log File
+                        </a>
+                    </p>
+
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#gathermodulesstatus">
+                            <strong>Step 4 -</strong> Gather Modules Status
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#gathermemorystats">
+                            <strong>Step 5 -</strong> Gather Memory Stats
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#gathernetworkinfo">
+                            <strong>Step 6 -</strong> Gather Network Info
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#gatherstorageinfo">
+                            <strong>Step 7 -</strong> Gather Storage Info
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#gathergpuinfo">
+                            <strong>Step 8 -</strong> Gather GPU Info
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#gatherrunningprocessesandresourceusage">
+                            <strong>Step 9 -</strong> Gather Running Processes and Resource Usage
+                        </a>
+                    </p>
+
+
+                </div>
+            </div>
+
+<!-- Blueprint Contents -->
+            <div class="col-lg-8 pt-3">
+                <div class="container">
+
+
+        <div class="jumbotron">
+            <p class="display-3 text-center">
+                <strong>Automate This</strong>
+            </p>
+            <p class="lead text-center">
+                Use the <strong>Attune GUI</strong> for your Scripts
+            </p>
+            <p class="lead">
+                <ol>
+                    <a href="https://www.servertribe.com/download-attune-registration/"
+                        target="_blank">
+                        <span class="badge badge-primary">1</span>
+                        Download Attune
+                        <i class="fa-solid fa-download fa-beat-fade" style="color: #0197ff;"></i>
+                    </a>
+                </ol>
+                <ol>
+                    <a href="https://github.com/attune-Automation/"
+                        target="_blank">
+                        <span class="badge badge-primary">2</span>
+                         Copy the Attune Project URL
+                         <i class="fa-brands fa-github fa-fade"></i>
+                    </a>
+                </ol>
+                <ol>
+                    <a href="https://servertribe-attune.readthedocs.io/en/latest/howto/design_workspace/clone_project.html"
+                        target="_blank">
+                        <span class="badge badge-primary">3</span>
+                        Clone the Project in Attune
+                         <i class="fa-solid fa-book fa-fade" style="color: #0197ff;"></i>
+                    </a>
+                </ol>
+                <ol>
+                    <a href="https://www.youtube.com/watch?v=GCWDI29rDV0"
+                        target="_blank">
+                        <span class="badge badge-primary">4</span>
+                        Plan your Job(s)
+                        <i class="fa-brands fa-youtube fa-fade" style="color: #0197ff;"></i>
+                    </a>
+                </ol>
+                <ol>
+                    <a href="https://www.youtube.com/watch?v=b7DhFcURkZg"
+                        target="_blank">
+                        <span class="badge badge-primary">5</span>
+                        Run your Job(s)
+                        <i class="fa-brands fa-youtube fa-fade" style="color: #0197ff;"></i>
+                    </a>
+                </ol>
+            </p>
+            <p class="lead text-center">
+                You've automated: <strong>Device Health Status Dump - Linux</strong>
+            </p>
+            <hr class="my-4 text-center">
+            <div class="col px-0">
+                <p class="text-center">
+                    Get the most out of automation with our get started
+                    videos, product demonstrations, and more.
+                </p>
+                <p class="lead text-center">
+                    <a class="btn btn-primary btn-lg"
+                       href="https://www.servertribe.com/learn/"
+                       target="_blank"
+                       role="button">
+                        Learn Attune Automation
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <p>The following steps will guide you through the manual process.</p>
+        </div>
+
+<!-- Blueprint Steps -->
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="checkdistroandversion">
+                            <a href="#checkdistroandversion">
+                                <strong>Step 1 -</strong> Check Distro and Version
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {linuxuser}@{linuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if [ -f /etc/os-release ]
+then
+    # freedesktop.org and systemd
+    # all the distros supported by this blueprint have /etc/os-release
+    . /etc/os-release
+    DISTRO=$ID
+    VER=$VERSION_ID
+elif type lsb_release &gt;/dev/null 2&gt;&amp;1
+then
+    # linuxbase.org 
+    # UNTESTED
+    DISTRO=$(lsb_release -si)
+    VER=$(lsb_release -sr)
+elif [ -f /etc/lsb-release ]
+then
+    # For some versions of Debian/Ubuntu without lsb_release command
+    # UNTESTED
+    . /etc/lsb-release
+    DISTRO=$DISTRIB_ID
+    VER=$DISTRIB_RELEASE
+elif [ -f /etc/debian_version ]
+then
+    # Older Debian/Ubuntu/etc.
+    # UNTESTED
+    DISTRO=Debian
+    VER=$(cat /etc/debian_version)
+elif [ -f /etc/SuSe-release ]
+then
+    # Older SuSE/etc. 
+    # TODO currently unimplemented
+    :
+elif [ -f /etc/redhat-release ]
+then
+    # Older Red Hat, CentOS, etc. 
+    # TODO currently unimplemented
+    :
+else
+    # Fall back to uname, e.g. &quot;Linux &lt;version&gt;&quot;, also works for BSD, etc.
+    # UNTESTED
+    DISTRO=$(uname -s)
+    VER=$(uname -r)
+fi
+
+echo DISTRO=$DISTRO
+echo VER=$VER
+
+# write distro checking result to file
+cat &lt;&lt; EOF &gt; {linuxDistroCheckingResultTempFile}
+DISTRO=&#x27;$DISTRO&#x27;
+VER=&#x27;$VER&#x27;
+EOF
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="gathergeneralinfo">
+                            <a href="#gathergeneralinfo">
+                                <strong>Step 2 -</strong> Gather General Info
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+echo &quot;=========================================================================&quot;
+echo &quot;Display the current date and time of the host(date)&quot;
+echo &quot;=========================================================================&quot;
+date
+echo
+
+echo &quot;=========================================================================&quot;
+echo &quot;Print system information(uname -a)&quot;
+echo &quot;=========================================================================&quot;
+uname -a
+echo
+
+echo &quot;=========================================================================&quot;
+echo &quot;Query the system hostname and related settings(hostnamectl)&quot;
+echo &quot;=========================================================================&quot;
+hostnamectl
+echo
+
+echo &quot;=========================================================================&quot;
+echo &quot;Show who is logged on and what they are doing&quot;
+echo &quot;This also includes the output of &#x27;uptime&#x27;&quot;
+echo &quot;(w)&quot;
+echo &quot;=========================================================================&quot;
+w
+echo
+
+echo &quot;=========================================================================&quot;
+echo &quot;Display information about the CPU architecture(lscpu)&quot;
+echo &quot;=========================================================================&quot;
+lscpu
+echo
+
+echo &quot;=========================================================================&quot;
+echo &quot;Display information about the CPU architecture&quot;
+echo &quot;in table view with every CPUs in a line&quot;
+echo &quot;(lscpu -ae)&quot;
+echo &quot;=========================================================================&quot;
+lscpu -ae
+echo
+
+echo &quot;=========================================================================&quot;
+echo &quot;Show content of kernel&#x27;s info of CPU(cat /proc/cpuinfo)&quot;
+echo &quot;=========================================================================&quot;
+[ -f /proc/cpuinfo ] &amp;&amp; cat /proc/cpuinfo
+echo
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="gathersystemlogs">
+                            <a href="#gathersystemlogs">
+                                <strong>Step 3 -</strong> Gather System Logs
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="kernelringbufferdmesg">
+                            <a href="#kernelringbufferdmesg">
+                                <strong>Step 3.1 -</strong> Kernel Ring Buffer - dmesg
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {linuxusersudo}@{linuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+echo &quot;=========================================================================&quot;
+echo &quot;Print the kernel ring buffer(dmesg)&quot;
+echo &quot;=========================================================================&quot;
+dmesg
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="systemlogfile">
+                            <a href="#systemlogfile">
+                                <strong>Step 3.2 -</strong> System Log File
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+# The system log file paths are different from distros,
+# so we need to do the seperation
+. {linuxDistroCheckingResultTempFile} # load distro checking result
+case $DISTRO in
+    ubuntu | debian)
+        echo &quot;=========================================================================&quot;
+        echo &quot;Print the system log file(cat /var/log/syslog)&quot;
+        echo &quot;=========================================================================&quot;
+        [ -f /var/log/syslog ] &amp;&amp; cat /var/log/syslog
+        ;;
+    centos)
+        echo &quot;=========================================================================&quot;
+        echo &quot;Print the system log file(cat /var/log/messages)&quot;
+        echo &quot;=========================================================================&quot;
+        [ -f /var/log/messages ] &amp;&amp; cat /var/log/messages
+        ;;
+    *)
+        echo &quot;unsupported distro&quot;
+        false # exit code 1 will let Attune suspend running the job
+        ;;
+esac
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="gathermodulesstatus">
+                            <a href="#gathermodulesstatus">
+                                <strong>Step 4 -</strong> Gather Modules Status
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+# &#x27;lsusb&#x27; isn&#x27;t installed on CentOS by default
+. {linuxDistroCheckingResultTempFile} # load distro checking result
+case $DISTRO in
+    ubuntu | debian)
+        # Nothing to be done
+        ;;
+    centos)
+        dnf install -y usbutils
+        ;;
+    *)
+        echo &quot;unsupported distro&quot;
+        false # exit code 1 will let Attune suspend running the job
+        ;;
+esac
+
+
+echo &quot;=========================================================================&quot;
+echo &quot;Show the status of modules in the Linux Kernel(lsmod)&quot;
+echo &quot;=========================================================================&quot;
+lsmod
+echo
+
+echo &quot;=========================================================================&quot;
+echo &quot;List all PCI devices(lspci)&quot;
+echo &quot;=========================================================================&quot;
+lspci
+echo
+
+echo &quot;=========================================================================&quot;
+echo &quot;List all PCI devices(lspci -v)&quot;
+echo &quot;=========================================================================&quot;
+lspci -v
+echo
+
+echo &quot;=========================================================================&quot;
+echo &quot;List USB devices(lsusb)&quot;
+echo &quot;=========================================================================&quot;
+lsusb
+echo
+
+echo &quot;=========================================================================&quot;
+echo &quot;List USB devices(lsusb -v)&quot;
+echo &quot;=========================================================================&quot;
+lsusb -v
+echo
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="gathermemorystats">
+                            <a href="#gathermemorystats">
+                                <strong>Step 5 -</strong> Gather Memory Stats
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {linuxuser}@{linuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+echo &quot;=========================================================================&quot;
+echo &quot;Display amount of free and used memory in the system(free -m)&quot;
+echo &quot;=========================================================================&quot;
+free -m
+echo
+
+echo &quot;=========================================================================&quot;
+echo &quot;Display kenerl info of memory(cat /proc/meminfo)&quot;
+echo &quot;=========================================================================&quot;
+[ -f /proc/meminfo ] &amp;&amp; cat /proc/meminfo
+echo
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="gathernetworkinfo">
+                            <a href="#gathernetworkinfo">
+                                <strong>Step 6 -</strong> Gather Network Info
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {linuxusersudo}@{linuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+# The commands used in this step need the package net-tools,
+# which is not installed by default, so we install it first
+. {linuxDistroCheckingResultTempFile} # load distro checking result
+case $DISTRO in
+    ubuntu | debian)
+        apt update
+        apt install -y net-tools
+        ;;
+    centos)
+        dnf install -y net-tools
+        ;;
+    *)
+        echo &quot;unsupported distro&quot;
+        false # exit code 1 will let Attune suspend running the job
+        ;;
+esac
+        
+
+
+echo &quot;=========================================================================&quot;
+echo &quot;Show network interfaces(such as IP, subnet, MAC, etc.)&quot;
+echo &quot;/usr/sbin/ifconfig&quot;
+echo &quot;=========================================================================&quot;
+# By default, normal users on Debian don&#x27;t have /usr/sbin in $PATH
+/usr/sbin/ifconfig
+echo
+
+echo &quot;=========================================================================&quot;
+echo &quot;Show the routing tables(netstat -r)&quot;
+echo &quot;=========================================================================&quot;
+netstat -r
+echo
+
+echo &quot;=========================================================================&quot;
+echo &quot;Show all sockets(netstat -apn)&quot;
+echo &quot;=========================================================================&quot;
+netstat -apn
+echo
+
+echo &quot;=========================================================================&quot;
+echo &quot;Show content of the resolver configuration file(cat /etc/resolv.conf)&quot;
+echo &quot;=========================================================================&quot;
+[ -f /etc/resolv.conf ] &amp;&amp; cat /etc/resolv.conf
+echo
+
+echo &quot;=========================================================================&quot;
+echo &quot;Show statistics of network interfaces(cat /proc/net/dev)&quot;
+echo &quot;=========================================================================&quot;
+[ -f /proc/net/dev ] &amp;&amp; cat /proc/net/dev
+echo
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="gatherstorageinfo">
+                            <a href="#gatherstorageinfo">
+                                <strong>Step 7 -</strong> Gather Storage Info
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {linuxuser}@{linuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+echo &quot;=========================================================================&quot;
+echo &quot;Report file system disk space usage(df -aTh | grep -v loop)&quot;
+echo &quot;=========================================================================&quot;
+df -aTh | grep -v loop || true
+echo
+
+echo &quot;=========================================================================&quot;
+echo &quot;List block devices(lsblk -al | grep -v loop)&quot;
+echo &quot;=========================================================================&quot;
+lsblk -al | grep -v loop || true
+echo
+
+echo &quot;=========================================================================&quot;
+echo &quot;Print block device attributes(blkid | grep -v loop)&quot;
+echo &quot;=========================================================================&quot;
+# Debian don&#x27;t have /usr/sbin in $PATH by default
+/usr/sbin/blkid | grep -v loop || true
+echo
+
+echo &quot;=========================================================================&quot;
+echo &quot;List active mount points(mount | grep -v loop)&quot;
+echo &quot;=========================================================================&quot;
+mount | grep -v loop || true
+echo
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="gathergpuinfo">
+                            <a href="#gathergpuinfo">
+                                <strong>Step 8 -</strong> Gather GPU Info
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {linuxusersudo}@{linuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+echo &quot;=========================================================================&quot;
+echo &quot;Check status of NVidia GPU(nvidia-smi)&quot;
+echo &quot;=========================================================================&quot;
+# see if there&#x27;s NVidia GPU installed
+if lspci -vnn | grep VGA | grep -qi NVIDIA
+then
+    # check if &#x27;nvidia-smi&#x27; is installed
+    if ! type nvidia-smi &gt;/dev/null 2&gt;&amp;1
+    then
+        # nvidia-smi not found, install it
+        . {linuxDistroCheckingResultTempFile} # load distro checking result
+        case $DISTRO in
+            ubuntu)
+                apt update
+                apt install -y nvidia-340
+                ;;
+            debian)
+                # add &#x27;non-free&#x27; archive area to sources.list
+                # if there is already &#x27;non-free&#x27;, then sources.list is unmodified
+                sed -i -e &#x27;/deb http/!b&#x27; -e &#x27;/non-free/b&#x27; -e &#x27;s/$/ non-free/&#x27; /etc/apt/sources.list
+                apt update
+                apt install -y nvidia-smi
+                ;;
+            centos)
+                # consult https://docs.nvidia.com/datacenter/tesla/pdf/NVIDIA_Driver_Installation_Quickstart.pdf
+                # for installation documentation
+                dnf config-manager --set-enabled PowerTools
+                dnf install -y epel-release
+                dnf config-manager --add-repo http://developer.download.nvidia.com/compute/cuda/repos/rhel8/x86_64/cuda-rhel8.repo
+                dnf install -y kernel-devel-$(uname -r) kernel-headers-$(uname -r)
+                dnf clean all
+                dnf -y module install nvidia-driver:latest-dkms
+                ;;
+            *)
+                echo &quot;unsupported distro&quot;
+                false # exit code 1 will let Attune suspend running the job
+                ;;
+        esac
+    fi
+    
+    if type nvidia-smi &gt;/dev/null 2&gt;&amp;1
+    then
+        nvidia-smi || true
+    else
+        echo &quot;nvidia-smi command install failed&quot;
+    fi
+else
+    # since &#x27;nvidia-smi&#x27; comes with the GPU driver
+    # which is useless(and huge, may also harmful to system stability) if a GPU is not installed
+    # so we decide to not install the driver when GPU is not detected
+    echo &quot;No NVidia GPU found.&quot;
+fi
+echo
+
+echo &quot;=========================================================================&quot;
+echo &quot;Show OpenCL platforms and devices(clinfo)&quot;
+echo &quot;=========================================================================&quot;
+# check if &#x27;clinfo&#x27; is installed
+if ! type clinfo &gt;/dev/null 2&gt;&amp;1
+then
+    # clinfo not found, install it
+    . {linuxDistroCheckingResultTempFile} # load distro checking result
+    case $DISTRO in
+        ubuntu | debian)
+            apt update
+            apt install -y clinfo
+            ;;
+        centos)
+            # no official package for CentOS8
+            # install with a RHEL7 rpm as a workaround
+            dnf install -y ocl-icd # prerequisite
+            wget https://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/c/clinfo-2.1.17.02.09-1.el7.x86_64.rpm
+            rpm -ihv clinfo-2.1.17.02.09-1.el7.x86_64.rpm
+            rm -f clinfo-2.1.17.02.09-1.el7.x86_64.rpm
+            ;;
+        *)
+            echo &quot;unsupported distro&quot;
+            false # exit code 1 will let Attune suspend running the job
+            ;;
+    esac
+fi
+if type clinfo &gt;/dev/null 2&gt;&amp;1
+then
+    clinfo || true
+else
+    echo &quot;clinfo command install failed&quot;
+fi
+echo
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="gatherrunningprocessesandresourceusage">
+                            <a href="#gatherrunningprocessesandresourceusage">
+                                <strong>Step 9 -</strong> Gather Running Processes and Resource Usage
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {linuxuser}@{linuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+echo &quot;=========================================================================&quot;
+echo &quot;Display running processes, plus memory and CPU usage info(top -b -n 1)&quot;
+echo &quot;=========================================================================&quot;
+top -b -n 1
+echo
+
+echo &quot;=========================================================================&quot;
+echo &quot;Report a snapshot of the current processes(ps -e)&quot;
+echo &quot;=========================================================================&quot;
+ps -e
+echo
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+
+                    <div class="row pt-5">
+                        <div class="col">
+                            <h2>Completed</h2>
+                            <p>
+                                You have completed this instruction.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!-- Download Attune Ad -->
+
+            <div class="toc col-lg-2 px-0">
+                <div class="container px-0 pt-3 pl-5">
+                    <div class="card border-light mb-3" style="max-width: 18rem;">
+                        <div class="card-body attune-ad">
+                            <img
+                                src="https://www.servertribe.com/wp-content/uploads/2022/06/AttuneLogoV2_powered_by.png"
+                                alt="Attune - Powered by ServerTribe"
+                                class="img-fluid">
+                            <p class="card-title mt-3 text-center">
+                                <strong>Automate with Attune</strong>
+                            </p>
+                            <p class="card-text text-center">
+                                Download the Attune Community Edition.
+                            </p>
+                            <p class="text-center">
+                                <a href="https://www.servertribe.com/download-attune-registration/"
+                                   class="btn btn-primary mt-3">
+                                    DOWNLOAD!!!
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+<!-- Join Discord -->
+
+        <div class="row py-5">
+            <div class="jumbotron">
+              <h1 class="display-4 text-center">
+                  Discuss this Project in Discord
+              </h1>
+              <p class="lead">
+
+                  Join our Discord channel and connect with like-minded individuals who
+                  share your passion. Engage in lively discussions, gain valuable insights,
+                  and stay updated on the latest trends in our industry. Don't miss out on
+                  this opportunity to network, learn, and grow together.
+              </p>
+              <hr class="my-4 text-center">
+                <div class="col px-0">
+                  <p class="text-center">
+                      Click the link below and become a part of our vibrant community on
+                      Discord today!
+                  </p>
+                  <p class="lead text-center">
+                    <a class="btn btn-primary btn-lg"
+                       href="https://discord.com/invite/3YpJsagqUn"
+                       role="button">
+                        Join NOW!!!
+                    </a>
+                  </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Project Footer -->
+
+<footer class="footer fixed-bottom bg-white border-top box-shadow">
+      <div class="container px-0">
+          <div class="row">
+              <div class="col px-0">
+                  <a class="my-0 mr-lg-auto"
+                     href="https://www.servertribe.com/"
+                     target="_blank">
+                      <img
+                          src="https://www.servertribe.com/wp-content/uploads/2022/06/AttuneLogoV2_powered_by.png"
+                          alt="Attune - Powered by ServerTribe"
+                          class="img-fluid navbar-img">
+                  </a>
+              </div>
+          </div>
+      </div>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
+</body>
+</html>

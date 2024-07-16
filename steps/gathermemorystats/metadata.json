@@ -1,5 +1,7 @@
 {
+    "actionOnStepFail": null, 
     "enabled": true, 
+    "externalUuid4": "6377401f-09f9-43e8-903a-edcce7991c9e", 
     "interpreter": 1, 
     "key": "gathermemorystats", 
     "name": "Gather Memory Stats", 

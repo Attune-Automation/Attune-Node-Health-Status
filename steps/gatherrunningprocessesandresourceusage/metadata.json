@@ -1,5 +1,7 @@
 {
+    "actionOnStepFail": null, 
     "enabled": true, 
+    "externalUuid4": "ff24a1da-07f2-4a8a-a557-0500b53a1cc8", 
     "interpreter": 1, 
     "key": "gatherrunningprocessesandresourceusage", 
     "name": "Gather Running Processes and Resource Usage", 

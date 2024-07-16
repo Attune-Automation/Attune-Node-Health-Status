@@ -1,5 +1,7 @@
 {
+    "actionOnStepFail": null, 
     "enabled": true, 
+    "externalUuid4": "ab0cf6b5-053d-4a24-9307-9403d7e91bec", 
     "interpreter": 1, 
     "key": "gathermodulesstatus", 
     "name": "Gather Modules Status", 

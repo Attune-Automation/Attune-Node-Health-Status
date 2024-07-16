@@ -1,5 +1,7 @@
 {
+    "actionOnStepFail": null, 
     "enabled": true, 
+    "externalUuid4": "8a4078d7-7f10-4ef5-ad57-ea09325ffde4", 
     "interpreter": 1, 
     "key": "systemlogfile", 
     "name": "System Log File", 

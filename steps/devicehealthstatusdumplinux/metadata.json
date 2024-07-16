@@ -1,6 +1,8 @@
 {
+    "actionOnStepFail": null, 
     "concurrency": 1, 
     "enabled": true, 
+    "externalUuid4": "0521170e-265a-4daf-9c1b-076e67c6e275", 
     "isBlueprint": true, 
     "key": "devicehealthstatusdumplinux", 
     "links": [
